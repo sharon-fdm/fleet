@@ -95,21 +95,6 @@ const Policies = ({
   };
 
   const renderHostPolicies = () => {
-    if (hostPlatform === "ios" || hostPlatform === "ipados") {
-      return (
-        <EmptyState
-          header={<>Policies are not supported for this host</>}
-          info={
-            <>
-              Interested in detecting device health issues on{" "}
-              {hostPlatform === "ios" ? "iPhones" : "iPads"}?{" "}
-              <CustomLink url={SUPPORT_LINK} text="Let us know" newTab />
-            </>
-          }
-        />
-      );
-    }
-
     if (isAndroid(hostPlatform)) {
       return (
         <EmptyState
