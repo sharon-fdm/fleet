@@ -150,8 +150,9 @@ const canTurnOffMdm = (config: IHostActionConfigOptions) => {
 };
 
 const canQueryHost = ({ hostPlatform }: IHostActionConfigOptions) => {
-  // cannot query iOS, iPadOS, or Android hosts
-  return !isMobilePlatform(hostPlatform);
+  // iOS and iPadOS hosts can be queried via the Fleet agent
+  // Android hosts cannot be queried yet
+  return !isAndroid(hostPlatform);
 };
 
 const canLockHost = ({
